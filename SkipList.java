@@ -14,7 +14,7 @@ public class SkipList
 
   public int n; 		// number of entries in the Skip list
 
-  public int h;       // Height
+  public int height;       // Height
   public Random r;    // Coin toss
 
   /* ----------------------------------------------
@@ -43,7 +43,7 @@ public class SkipList
 
      n = 0;
 
-     h = 0;
+     height = 0;
      r = new Random(1234);    // Always generate the same set of random numbers.
   }
 
@@ -199,11 +199,11 @@ public class SkipList
 	   Check if height exceed current height.
  	   If so, make a new EMPTY level
 	   --------------------------------------------- */
-        if ( i >= h )
+        if ( i >= height )
    	{
            SkipListEntry p1, p2;
 
-	   h = h + 1;
+	   height = height + 1;
 
            p1 = new SkipListEntry(SkipListEntry.negInf,null);
            p2 = new SkipListEntry(SkipListEntry.posInf,null);
