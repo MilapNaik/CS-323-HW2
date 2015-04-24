@@ -12,10 +12,10 @@ public class SkipList
   public SkipListEntry tail;    // Last element of the top level
 
 
-  public int n; 		// number of entries in the Skip list
+  public int number; 		// number of entries in the Skip list
 
   public int height;       // Height
-  public Random r;    // Coin toss
+  public Random rando;    // Coin toss
 
   /* ----------------------------------------------
      Constructor: empty skiplist
@@ -41,23 +41,23 @@ public class SkipList
      p1.right = p2;
      p2.left = p1;
 
-     n = 0;
+     number = 0;
 
      height = 0;
-     r = new Random(1234);    // Always generate the same set of random numbers.
+     rando = new Random(1234);    // Always generate the same set of random numbers.
   }
 
 
   /** Returns the number of entries in the hash table. */
   public int size() 
   { 
-    return n; 
+    return number; 
   }
 
   /** Returns whether or not the table is empty. */
   public boolean isEmpty() 
   { 
-    return (n == 0); 
+    return (number == 0); 
   }
 
   /* ------------------------------------------------------
@@ -189,7 +189,7 @@ public class SkipList
 
      i = -1;
 
-     while ( r.nextDouble() < 0.5 )
+     while ( rando.nextDouble() < 0.5 )
      {
         i = i + 1;
 
@@ -258,7 +258,7 @@ public class SkipList
 
      }
 
-     n = n + 1;
+     number = number + 1;
 
      return(null);   // No old value
   }
@@ -284,7 +284,7 @@ public class SkipList
 	      Entry = rem;   
 		  }
 	  
-	  n--;
+	  number--;
 	  
 	  return (val);
   }
@@ -293,7 +293,7 @@ public class SkipList
   public SkipListEntry firstEntry()
   {
 	  SkipListEntry bottom = head, first;
-	  if (n==0)
+	  if (number==0)
 		  return null;  //nothing in the skiplist
 	  while (bottom.down != null){
 		  bottom = bottom.down;
@@ -306,7 +306,7 @@ public class SkipList
   public SkipListEntry lastEntry()
   {
 	  SkipListEntry bottom = tail, last;
-	  if (n==0)
+	  if (number==0)
 		  return null;  //nothing in the skiplist
 	  while (bottom.down != null){
 		  bottom = bottom.down;
