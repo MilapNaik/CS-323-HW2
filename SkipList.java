@@ -30,16 +30,16 @@ public class SkipList
      ---------------------------------------------- */
   public SkipList()     // Default constructor...
   { 
-     SkipListEntry p1, p2;
+     SkipListEntry SL1, SL2;
 
-     p1 = new SkipListEntry(SkipListEntry.negInf, null);
-     p2 = new SkipListEntry(SkipListEntry.posInf, null);
+     SL1 = new SkipListEntry(SkipListEntry.negInf, null);
+     SL2 = new SkipListEntry(SkipListEntry.posInf, null);
 
-     head = p1;
-     tail = p2;
+     head = SL1;
+     tail = SL2;
 
-     p1.right = p2;
-     p2.left = p1;
+     SL1.right = SL2;
+     SL2.left = SL1;
 
      number = 0;
 
